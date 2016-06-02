@@ -39,6 +39,12 @@ This set of queries allows you to delete all data older than a specified period.
     mysql zabbix < delete-old-data.my.sql
     psql -A -R ' : ' -P 'footer=off' zabbix < delete-old-data.pg.sql
 
+### A lot of old data
+
+Speed of DELETE statement in MySQL is very low. Therefore, to remove a very large amount of old data is better to use ALTER, CREATE, INSERT and DROP statements with transfer required data. Another advantage of this method is that on disk frees occupied space without the need to run OPTIMIZE TABLE.
+
+    mysql zabbix < delete-old-big-data.my.sql
+
 #### Unused data
 
 This deletes all history for disabled items. May come in handy when you disable a significant number of items and no longer need the collected data.
