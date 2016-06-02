@@ -43,7 +43,7 @@ This set of queries allows you to delete all data older than a specified period.
 
 Speed of DELETE statement in MySQL is very low. Therefore, to remove a very large amount of old data is better to use ALTER, CREATE, INSERT and DROP statements with transfer required data. Another advantage of this method is that on disk frees occupied space without the need to run OPTIMIZE TABLE.
 
-    mysql zabbix < check-old-big-data.my.sql
+    mysql zabbix < delete-old-big-data.my.sql
 
 #### Unused data
 
